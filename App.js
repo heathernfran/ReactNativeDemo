@@ -36,6 +36,8 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
+        <Text style={styles.heading}>Navigation</Text>
+        <Text style={styles.heading}>SF Civic Art Collection</Text>
         <ListView
           dataSource={this.state.dataSource}
           renderRow={(rowData) => <Row {...rowData} />}
@@ -51,5 +53,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  heading: {
+    fontSize: 30,
   },
 });
