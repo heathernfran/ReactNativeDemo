@@ -14,42 +14,16 @@ export default class App extends React.Component {
       rowHasChanged: (r1, r2) => r1 !== r2
     });
     
-    // let dataResult = fetch(jsonUrl)
-    // // fetch('http://date.jsontest.com/')
-    //   .then((response) => response.json())
-    //   .then((responseData) => {
-    //     return responseData;
-    //     // this.setState({
-    //     //   dataSource: ds.cloneWithRows(dataResult)
-    //     //   // dataSource: this.state.dataSource.cloneWithRows(responseData.artist)
-    //     // });
-    //   })
-    //   .catch((error) => {
-    //     console.error(error);
-    //   })
-    //   .done();
-
-    
     this.state = {
-      // dataSource: {}
       dataSource: ds.cloneWithRows({})
     };
-    // this.state = {
-    //   artist: '',
-    //   location_description: '',
-    //   medium: '',
-    //   title: '',
-    // }
   }
   
   componentDidMount() {
     fetch(jsonUrl)
-    // fetch('http://date.jsontest.com/')
       .then((response) => response.json())
       .then((responseData) => {
-        // return responseData;
         this.setState({
-          // dataSource: ds.cloneWithRows(responseData)
           dataSource: this.state.dataSource.cloneWithRows(responseData)
         });
       })
@@ -58,29 +32,10 @@ export default class App extends React.Component {
       })
       .done();
   }
-  
-  // componentWillMount() {
-  //   fetch(jsonUrl)
-  // //   // fetch('http://date.jsontest.com/')
-  //     .then((response) => response.json())
-  //     .then((responseData) => {
-  //       this.setState({
-  //         dataSource: this.state.dataSource.cloneWithRows(responseData.artist)
-  //       });
-  //     })
-  //     .catch((error) => {
-  //       console.error(error);
-  //     })
-  //     .done();
-  // }
-  
+    
   render() {
     return (
       <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-        <Text>test here</Text>
         <ListView
           dataSource={this.state.dataSource}
           renderRow={(rowData) => <Row {...rowData} />}
