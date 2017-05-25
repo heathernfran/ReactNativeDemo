@@ -19,7 +19,7 @@ export default class App extends React.Component {
     };
   }
   
-  componentDidMount() {
+  componentWillMount() {
     fetch(jsonUrl)
       .then((response) => response.json())
       .then((responseData) => {
