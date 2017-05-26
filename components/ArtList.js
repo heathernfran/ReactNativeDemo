@@ -3,8 +3,6 @@ import { StyleSheet, ListView, Text, View } from 'react-native';
 
 import Row from './Row';
 
-const jsonUrl = 'https://data.sfgov.org/resource/bm46-8iwk.json';
-
 export default class ArtList extends React.Component {
 
   constructor(props) {
@@ -20,6 +18,8 @@ export default class ArtList extends React.Component {
   }
 
   componentWillMount() {
+    const jsonUrl = 'https://data.sfgov.org/resource/bm46-8iwk.json';
+
     fetch(jsonUrl)
       .then((response) => response.json())
       .then((responseData) => {
