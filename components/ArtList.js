@@ -1,9 +1,16 @@
 import React from 'react';
 import { StyleSheet, ListView, Text, View } from 'react-native';
 
+import { Router } from '../App';
 import Row from './Row';
 
 export default class ArtList extends React.Component {
+
+  static route = {
+    navigationBar: {
+      title: 'SF Civic Art',
+    }
+  };
 
   constructor(props) {
     super(props);
