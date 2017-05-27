@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { createRouter, NavigationProvider, StackNavigation } from '@expo/ex-navigation';
 
 import { Router } from '../App';
@@ -12,26 +12,21 @@ export default class HomeScreen extends React.Component {
     }
   };
 
-  _goToScreen = (name) => {
-    this.props.navigator.push(Router.getRoute(name));
-  }
-
-  // goToComponent = name => () => {
-    // this.props
-  // }
-
   render() {
     return (
       <View style={styles.container}>
-        <Text title='Home' style={styles.heading} onPress={this._goToScreen('home')}>Home</Text>
-        <Text title='SF Civic Art' style={styles.heading} onPress={this._goToScreen('artList')}>SF Civic Art</Text>
+        <Text style={styles.heading}>Home</Text>
+        <TouchableOpacity onPress={this._goToScreen('artList')}>
+          <Text style={styles.heading}>SF Civic Art</Text>
+        </TouchableOpacity>
       </View>
-      // <View style={styles.container}>
-      //   <Text title='Home' onPress={this._goToScreen('home')}>Home</Text>
-      //   <Text title='SF Civic Art' onPress={this._goToScreen('artList')}>SF Civic Art</Text>
-      // </View>
     );
   }
+
+  _goToScreen = name => () => {
+    this.props.navigator.push(Router.getRoute(name));
+  }
+
 }
 
 const styles = StyleSheet.create({
