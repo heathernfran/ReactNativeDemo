@@ -15,7 +15,7 @@ export default class App extends React.Component {
   render() {
     return (
       <NavigationProvider router={Router}>
-        <HomeScreen />
+        <StackNavigation initialRoute='home' />
       </NavigationProvider>
     );
   }
