@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import { createRouter, NavigationProvider, StackNavigation } from '@expo/ex-navigation';
 
 import { Router } from '../App';
 
