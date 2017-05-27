@@ -17,10 +17,6 @@ export default class App extends React.Component {
       <NavigationProvider router={Router}>
         <HomeScreen />
       </NavigationProvider>
-
-      // <View style={styles.container}>
-      //   <HomeScreen />
-      // </View>
     );
   }
 }
