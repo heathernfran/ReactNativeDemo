@@ -15,7 +15,6 @@ export default class HomeScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.heading}>Home</Text>
         <TouchableOpacity onPress={this._goToScreen('artList')}>
           <Text style={styles.heading}>SF Civic Art</Text>
         </TouchableOpacity>
