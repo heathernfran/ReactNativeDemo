@@ -5,6 +5,12 @@ import Row from './Row';
 
 export default class ArtList extends React.Component {
 
+  static route = {
+    navigationBar: {
+      title: 'SF Civic Art',
+    }
+  };
+
   constructor(props) {
     super(props);
 

@@ -1,16 +1,22 @@
 import React from 'react';
 import { AppRegistry, StyleSheet, ListView, Text, View } from 'react-native';
+import { createRouter, NavigationProvider, StackNavigation } from '@expo/ex-navigation';
 
+import HomeScreen from './components/HomeScreen';
 import ArtList from './components/ArtList';
+
+export const Router = createRouter(() => ({
+  home: () => HomeScreen,
+  artList: () => ArtList,
+}));
 
 export default class App extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.heading}>Navigation</Text>
-        <ArtList />
-      </View>
+      <NavigationProvider router={Router}>
+        <StackNavigation initialRoute='home' />
+      </NavigationProvider>
     );
   }
 }
